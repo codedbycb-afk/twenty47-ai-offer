@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Twenty47 Marketing — 9 ways to position the same AI integration offer.">
+<title>Twenty47 — Ways to Position the Offer</title>
+<style>
+  :root {
+    --ground: #0b0a09;
+    --panel: #151311;
+    --panel-2: #1d1a17;
+    --line: #2a2622;
+    --orange: #f97316;
+    --orange-bright: #fb923c;
+    --orange-dim: rgba(249, 115, 22, 0.14);
+    --ink: #ece7e0;
+    --muted: #8f877c;
+    --muted-2: #6a635a;
+    --cash: #5fca8d;
+    --font-display: 900 1em/1 'Arial Black', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  a { color: var(--orange-bright); }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 28px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--orange); margin: 0 0 18px;
+  }
+
+  /* nav */
+  .topnav { border-bottom: 1px solid var(--line); }
+  .topnav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; gap: 16px; }
+  .topnav .brand { font: var(--font-display); text-transform: uppercase; font-size: 17px; letter-spacing: -0.01em; }
+  .topnav .brand .hl { color: var(--orange); }
+  .topnav a.back { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-decoration: none; color: var(--muted); border: 1px solid var(--line); padding: 8px 14px; border-radius: 100px; }
+  .topnav a.back:hover { color: var(--orange-bright); border-color: var(--orange-dim); }
+
+  /* hero */
+  .hero { position: relative; padding: 88px 0 60px; overflow: hidden; }
+  .hero-glow {
+    position: absolute; top: -40%; left: 50%; width: 780px; height: 780px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(249,115,22,0.24) 0%, rgba(249,115,22,0.06) 36%, transparent 62%);
+    filter: blur(20px); z-index: 0; animation: pulse 7s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero h1 {
+    font: var(--font-display); text-transform: uppercase;
+    font-size: clamp(34px, 6.4vw, 62px); letter-spacing: -0.02em; line-height: 0.96;
+    margin: 0 0 22px; max-width: 18ch;
+  }
+  .hero h1 .hl { color: var(--orange); }
+  .hero p.lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--muted); max-width: 60ch; margin: 0; }
+  .hero p.lead b { color: var(--ink); font-weight: 600; }
+
+  /* angle blocks */
+  .angles { padding: 24px 0 40px; }
+  .angle { border-top: 1px solid var(--line); padding: 46px 0; }
+  .angle-top { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .pill {
+    font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 7px 13px; border-radius: 100px; border: 1px solid var(--line); color: var(--muted);
+  }
+  .pill.type { color: var(--orange); border-color: var(--orange-dim); }
+  .pill.driver { color: var(--muted); }
+  .angle h2 {
+    font: var(--font-display); text-transform: uppercase;
+    font-size: clamp(24px, 3.8vw, 38px); letter-spacing: -0.02em; line-height: 1.02;
+    margin: 0 0 16px; max-width: 22ch;
+  }
+  .angle .sub { font-size: 17.5px; color: var(--muted); max-width: 64ch; margin: 0 0 22px; }
+  .angle .sub b { color: var(--ink); font-weight: 600; }
+  .pitch {
+    background: linear-gradient(180deg, rgba(249,115,22,0.09), rgba(249,115,22,0.02));
+    border: 1px solid var(--orange-dim); border-left: 3px solid var(--orange);
+    border-radius: 12px; padding: 20px 24px; max-width: 68ch;
+  }
+  .pitch .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 9px; }
+  .pitch p { margin: 0; font-size: 18px; line-height: 1.45; letter-spacing: -0.005em; }
+  .bestfor { margin-top: 16px; font-size: 14px; color: var(--muted-2); font-family: var(--font-mono); letter-spacing: 0.02em; }
+  .bestfor b { color: var(--muted); font-weight: 400; }
+
+  /* how to use */
+  .howto { border-top: 1px solid var(--line); padding: 60px 0 30px; }
+  .howto h2 { font: var(--font-display); text-transform: uppercase; font-size: clamp(22px, 3.4vw, 32px); letter-spacing: -0.02em; margin-bottom: 20px; }
+  .howto ul { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 14px; max-width: 70ch; }
+  .howto li { position: relative; padding-left: 26px; color: var(--muted); font-size: 16.5px; }
+  .howto li::before { content: "→"; position: absolute; left: 0; color: var(--orange); }
+  .howto li b { color: var(--ink); font-weight: 600; }
+
+  footer { border-top: 1px solid var(--line); padding: 48px 0 66px; }
+  footer .brand-line { font: var(--font-display); text-transform: uppercase; font-size: 24px; letter-spacing: -0.01em; }
+  footer .brand-line .hl { color: var(--orange); }
+  footer .tagline { color: var(--orange-bright); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; margin-top: 8px; }
+  footer .meta { color: var(--muted-2); font-family: var(--font-mono); font-size: 12px; margin-top: 22px; letter-spacing: 0.04em; }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    .angle { padding: 36px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-glow { animation: none; }
+    .reveal { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <span class="brand">TWENTY<span class="hl">47</span></span>
+    <a class="back" href="./">← Business model deck</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Positioning · 9 doors into the same offer</p>
+    <h1>Same offer.<br><span class="hl">Nine ways</span> to say it.</h1>
+    <p class="lead">The offer doesn't change — the audit, the fixes, the retainer stay the same. What changes is <b>the frame you lead with</b>, matched to what a specific owner is actually losing sleep over. Pick the angle that fits the person in front of you. Test two or three in your ads and outreach and let the market tell you which one pulls.</p>
+  </div>
+</header>
+
+<main class="angles">
+  <div class="wrap">
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">The Hidden Bleed</span><span class="pill driver">Driver · loss aversion</span></div>
+      <h2>You're losing money you can't see. We find it and stop it.</h2>
+      <p class="sub">Every established business quietly leaks revenue — leads that go cold, customers nobody followed up with, hours burned on manual busywork. <b>We put a real number on your leak, then close it with AI.</b></p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"We find the money quietly leaking out of your business and plug it with AI. You keep what you were losing."</p></div>
+      <p class="bestfor"><b>Best for:</b> owners who feel busy but stuck, and skeptics who only move on hard numbers.</p>
+    </section>
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">The Fractional AI Department</span><span class="pill driver">Driver · cost of labor</span></div>
+      <h2>An entire AI department for less than one hire.</h2>
+      <p class="sub">Instead of hiring a coordinator, a receptionist, and a follow-up rep, you install AI that does all three — <b>running 24/7 for a fraction of a single salary,</b> with no payroll, no turnover, no sick days.</p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"Get the output of three new hires for less than the cost of one — without adding anyone to payroll."</p></div>
+      <p class="bestfor"><b>Best for:</b> businesses at a capacity ceiling and owners watching labor costs.</p>
+    </section>
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">The 5%</span><span class="pill driver">Driver · credibility / anti-hype</span></div>
+      <h2>95% of businesses that try AI get nothing. We build the 5% that works.</h2>
+      <p class="sub">Most "AI" is a toy that never touches the bottom line. <b>We only build systems tied to a dollar outcome</b> — and we prove the return before you scale it. No hype, no science projects.</p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"Everyone's selling AI right now. We're the ones who make it actually produce a return — and we guarantee it."</p></div>
+      <p class="bestfor"><b>Best for:</b> buyers who've already tried tools and got burned; sophisticated owners.</p>
+    </section>
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">Booked Solid</span><span class="pill driver">Driver · outcome first</span></div>
+      <h2>You run the jobs. We keep the calendar full.</h2>
+      <p class="sub">Every lead answered in 60 seconds, every dead customer revived, every appointment booked — automatically. <b>You just show up to the work you're great at.</b></p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"We fill your calendar using leads and customers you already have. You just do the work."</p></div>
+      <p class="bestfor"><b>Best for:</b> service businesses and owner-operators who sell their time.</p>
+    </section>
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">The Diagnosis</span><span class="pill driver">Driver · trust / consultative</span></div>
+      <h2>We don't sell you AI. We diagnose your business and prescribe it.</h2>
+      <p class="sub">Buying random AI tools is like taking medicine before the diagnosis. <b>We audit how you actually run, find what's costing you most, and fix that first</b> — the rest waits until it's earned.</p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"We diagnose exactly where your business is bleeding time and money, then prescribe the AI that fixes it."</p></div>
+      <p class="bestfor"><b>Best for:</b> higher-ticket, considered buyers who want a partner, not a vendor.</p>
+    </section>
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">Never Miss Again</span><span class="pill driver">Driver · operational specificity</span></div>
+      <h2>Never miss another lead, call, or customer.</h2>
+      <p class="sub">Most calls to a busy business go unanswered, and most leads never get a second follow-up. <b>We make sure every one gets caught, answered, and booked</b> — around the clock, even while you sleep.</p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"Every call answered, every lead followed up, every past customer brought back — automatically, 24/7."</p></div>
+      <p class="bestfor"><b>Best for:</b> phone-heavy, high-call-volume businesses losing after-hours demand.</p>
+    </section>
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">Don't Get Left Behind</span><span class="pill driver">Driver · competitive urgency</span></div>
+      <h2>Soon this is just how your industry runs. Be early, not late.</h2>
+      <p class="sub">The competitors automating right now answer faster, follow up harder, and spend less doing it. <b>That gap compounds every month.</b> We put you on the right side of it before it's the price of entry.</p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"Your competitors are quietly automating. We make sure you're the one they're chasing — not catching up to."</p></div>
+      <p class="bestfor"><b>Best for:</b> competitive markets and status-driven owners who hate being behind.</p>
+    </section>
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">Pay When It Works</span><span class="pill driver">Driver · risk reversal</span></div>
+      <h2>You only pay us when you see the value.</h2>
+      <p class="sub">We take the risk off your side of the table. <b>A paid audit that finds 10× its cost or it's free, and a first system that produces a result in 30 days or the retainer waits</b> until it does.</p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"We put the risk on us: find the value first, prove it in 30 days, and you only scale what pays for itself."</p></div>
+      <p class="bestfor"><b>Best for:</b> cautious, cash-conscious buyers who've been sold empty promises.</p>
+    </section>
+
+    <section class="angle reveal">
+      <div class="angle-top"><span class="pill type">Buy Back Your Week</span><span class="pill driver">Driver · owner freedom</span></div>
+      <h2>Get your nights and weekends back.</h2>
+      <p class="sub">The repetitive work eating your evenings — follow-ups, scheduling, quotes, admin — handed to AI that never clocks out. <b>Get the hours back and spend them on the business, or on your life.</b></p>
+      <div class="pitch"><span class="k">Say it like this</span><p>"We hand your busywork to AI so you stop working in the business and get your time back."</p></div>
+      <p class="bestfor"><b>Best for:</b> burned-out owner-operators drowning in day-to-day tasks.</p>
+    </section>
+
+  </div>
+</main>
+
+<section class="howto">
+  <div class="wrap">
+    <h2>How to use these</h2>
+    <ul>
+      <li><b>Match the angle to the person, not your preference.</b> The same audit sells nine different ways — lead with the one that names their specific pain.</li>
+      <li><b>Test in the cheap channels first.</b> Run two or three angles as ad hooks or cold-outreach openers and let reply rates pick the winner.</li>
+      <li><b>Keep the guarantee attached to all of them.</b> Whatever door you lead with, the "prove it first, pay for value" spine is what closes skeptical 2026 buyers.</li>
+      <li><b>Different angles for different niches.</b> "Never Miss Again" hits home services; "The Diagnosis" hits law firms; "Buy Back Your Week" hits solo operators.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand-line">TWENTY<span class="hl">47</span> MARKETING</div>
+    <div class="tagline">YOUR BUSINESS, BOOKED 24/7.</div>
+    <div class="meta">Offer positioning · internal reference v1 · July 2026 · <a href="./" style="color:var(--muted-2);">back to model deck</a></div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+</body>
+</html>
