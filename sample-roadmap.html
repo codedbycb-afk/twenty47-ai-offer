@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Twenty47 Marketing — sample AI Opportunity Roadmap, the deliverable every client receives.">
+<title>Twenty47 — Sample AI Opportunity Roadmap</title>
+<style>
+  :root {
+    --ground: #0b0a09;
+    --panel: #151311;
+    --panel-2: #1d1a17;
+    --line: #2a2622;
+    --orange: #f97316;
+    --orange-bright: #fb923c;
+    --orange-dim: rgba(249, 115, 22, 0.14);
+    --ink: #ece7e0;
+    --muted: #8f877c;
+    --muted-2: #6a635a;
+    --cash: #5fca8d;
+    --cash-dim: rgba(95, 202, 141, 0.12);
+    --font-display: 900 1em/1 'Arial Black', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  a { color: var(--orange-bright); }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 28px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--orange); margin: 0 0 18px;
+  }
+  .num { font-variant-numeric: tabular-nums; }
+  .cash { color: var(--cash); }
+
+  /* nav */
+  .topnav { border-bottom: 1px solid var(--line); }
+  .topnav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; gap: 16px; }
+  .topnav .brand { font: var(--font-display); text-transform: uppercase; font-size: 17px; letter-spacing: -0.01em; }
+  .topnav .brand .hl { color: var(--orange); }
+  .topnav a.back { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-decoration: none; color: var(--muted); border: 1px solid var(--line); padding: 8px 14px; border-radius: 100px; }
+  .topnav a.back:hover { color: var(--orange-bright); border-color: var(--orange-dim); }
+
+  /* sample banner */
+  .samplebar { background: var(--orange-dim); border-bottom: 1px solid var(--orange-dim); }
+  .samplebar .wrap { padding: 11px 28px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-bright); }
+
+  /* hero */
+  .hero { position: relative; padding: 76px 0 44px; overflow: hidden; }
+  .hero-glow {
+    position: absolute; top: -40%; left: 50%; width: 780px; height: 780px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(249,115,22,0.24) 0%, rgba(249,115,22,0.06) 36%, transparent 62%);
+    filter: blur(20px); z-index: 0; animation: pulse 7s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero h1 {
+    font: var(--font-display); text-transform: uppercase;
+    font-size: clamp(32px, 5.6vw, 54px); letter-spacing: -0.02em; line-height: 0.98;
+    margin: 0 0 14px; max-width: 20ch;
+  }
+  .hero h1 .hl { color: var(--orange); }
+  .hero p.prep { font-family: var(--font-mono); font-size: 13px; color: var(--muted); letter-spacing: 0.03em; margin: 0; }
+
+  /* snapshot */
+  .snap { padding: 20px 0 8px; }
+  .snap .grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  }
+  .snap .cell { background: var(--panel); padding: 16px 18px; }
+  .snap .cell .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 5px; }
+  .snap .cell .v { font-size: 15.5px; color: var(--ink); font-weight: 600; }
+
+  /* section shell */
+  section.block { border-top: 1px solid var(--line); padding: 52px 0; }
+  section.block > .wrap > .eyebrow { margin-bottom: 14px; }
+
+  /* headline number */
+  .headline {
+    background: linear-gradient(180deg, rgba(249,115,22,0.10), rgba(249,115,22,0.02));
+    border: 1px solid var(--orange-dim); border-radius: 18px; padding: 40px 34px;
+  }
+  .headline .big {
+    font: var(--font-display); text-transform: uppercase; letter-spacing: -0.02em; line-height: 1.04;
+    font-size: clamp(26px, 4.6vw, 44px); margin: 0 0 18px; max-width: 24ch;
+  }
+  .headline .big .hl { color: var(--orange); }
+  .headline .big .cash { color: var(--cash); }
+  .headline p { margin: 0; color: var(--muted); font-size: 17px; max-width: 62ch; }
+  .headline p b { color: var(--ink); font-weight: 600; }
+  .headline .kicker { margin-top: 18px; font-size: 18px; color: var(--ink); }
+  .headline .kicker b { color: var(--orange-bright); }
+
+  /* opportunity cards */
+  .opp { border-top: 1px solid var(--line); padding: 40px 0; }
+  .opp:first-child { border-top: 0; padding-top: 8px; }
+  .opp-top { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+  .opp-rank { font: var(--font-display); font-size: 30px; color: var(--orange); line-height: 1; }
+  .opp h3 {
+    font: var(--font-display); text-transform: uppercase; letter-spacing: -0.015em; line-height: 1.05;
+    font-size: clamp(19px, 2.9vw, 27px); max-width: 26ch;
+  }
+  .opp h3 .cash { color: var(--cash); }
+  .opp .row { margin: 12px 0; padding-left: 92px; font-size: 16.5px; color: var(--muted); position: relative; max-width: 74ch; }
+  .opp .row .lab { position: absolute; left: 0; top: 0; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); }
+  .opp .row b { color: var(--ink); font-weight: 600; }
+  .opp .row .cash { color: var(--cash); font-weight: 600; }
+  @media (max-width: 620px) {
+    .opp .row { padding-left: 0; padding-top: 18px; }
+    .opp .row .lab { top: 0; }
+  }
+
+  /* first move */
+  .firstmove {
+    background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--cash);
+    border-radius: 12px; padding: 24px 26px;
+  }
+  .firstmove .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cash); display: block; margin-bottom: 10px; }
+  .firstmove h3 { font-size: 20px; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .firstmove p { margin: 0; color: var(--muted); font-size: 16.5px; }
+  .firstmove p b { color: var(--ink); font-weight: 600; }
+
+  /* engagement table */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; }
+  th, td { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted-2); background: var(--panel); }
+  tr:last-child td { border-bottom: 0; }
+  td .ph { font-weight: 700; color: var(--ink); }
+  td .tm { font-family: var(--font-mono); font-size: 13px; color: var(--orange-bright); }
+  td.small { color: var(--muted); font-size: 15px; }
+  td .cash { color: var(--cash); font-weight: 600; }
+
+  /* investment */
+  .invest { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .invest .box { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px 26px; }
+  .invest .box .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 8px; }
+  .invest .box .v { font: var(--font-display); font-size: 26px; letter-spacing: -0.01em; color: var(--ink); }
+  .invest .box .v small { font-family: var(--font-body); font-weight: 400; font-size: 14px; color: var(--muted); display: block; margin-top: 4px; letter-spacing: 0; }
+  .roi {
+    margin-top: 20px;
+    background: linear-gradient(180deg, rgba(95,202,141,0.09), rgba(95,202,141,0.02));
+    border: 1px solid var(--cash-dim); border-left: 3px solid var(--cash);
+    border-radius: 12px; padding: 22px 26px;
+  }
+  .roi p { margin: 0 0 8px; font-size: 18px; line-height: 1.5; }
+  .roi p:last-child { margin-bottom: 0; }
+  .roi b { color: var(--ink); font-weight: 600; }
+  .roi .cash { color: var(--cash); font-weight: 700; }
+  @media (max-width: 560px) { .invest { grid-template-columns: 1fr; } }
+
+  /* guarantee list */
+  .guar { display: grid; gap: 14px; max-width: 72ch; }
+  .guar .item { position: relative; padding-left: 28px; color: var(--muted); font-size: 16.5px; }
+  .guar .item::before { content: "✓"; position: absolute; left: 0; color: var(--cash); font-weight: 700; }
+  .guar .item b { color: var(--ink); font-weight: 600; }
+  .guar .fine { color: var(--muted-2); font-size: 14.5px; padding-left: 28px; margin-top: 4px; }
+
+  .why { color: var(--muted); font-size: 17px; max-width: 66ch; }
+  .why b { color: var(--ink); font-weight: 600; }
+  .why .cta { margin-top: 20px; font-size: 18px; color: var(--ink); }
+  .why .cta b { color: var(--orange-bright); }
+
+  footer { border-top: 1px solid var(--line); padding: 48px 0 66px; }
+  footer .brand-line { font: var(--font-display); text-transform: uppercase; font-size: 24px; letter-spacing: -0.01em; }
+  footer .brand-line .hl { color: var(--orange); }
+  footer .tagline { color: var(--orange-bright); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; margin-top: 8px; }
+  footer .meta { color: var(--muted-2); font-family: var(--font-mono); font-size: 12px; margin-top: 22px; letter-spacing: 0.04em; }
+  footer .meta a { color: var(--muted-2); }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    .headline { padding: 30px 22px; }
+    .snap .grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-glow { animation: none; }
+    .reveal { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <span class="brand">TWENTY<span class="hl">47</span></span>
+    <a class="back" href="./">← Business model deck</a>
+  </div>
+</nav>
+
+<div class="samplebar">
+  <div class="wrap">Sample deliverable · fictional business, realistic numbers · this is what every client walks away with</div>
+</div>
+
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">AI Opportunity Roadmap</p>
+    <h1>Radiance <span class="hl">Med Spa</span></h1>
+    <p class="prep">Prepared by Twenty47 Marketing · July 2026</p>
+  </div>
+</header>
+
+<section class="block snap reveal">
+  <div class="wrap">
+    <p class="eyebrow">The business — snapshot from the audit</p>
+    <div class="grid">
+      <div class="cell"><div class="k">Type</div><div class="v">Med spa — injectables, laser, memberships</div></div>
+      <div class="cell"><div class="k">Avg client value (yr 1)</div><div class="v num">~$1,900</div></div>
+      <div class="cell"><div class="k">Inquiries / month</div><div class="v num">~120 (DMs, forms, calls)</div></div>
+      <div class="cell"><div class="k">First-response time</div><div class="v">3–5 hrs — front desk is in-room</div></div>
+      <div class="cell"><div class="k">Dormant past clients</div><div class="v num">~2,400 (no visit in 6+ mo)</div></div>
+      <div class="cell"><div class="k">After-hours inquiries</div><div class="v num">~35% go to voicemail</div></div>
+      <div class="cell"><div class="k">Front-desk admin load</div><div class="v num">~15 hrs/week manual</div></div>
+      <div class="cell"><div class="k">Loaded front-desk rate</div><div class="v num">~$28/hr</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal">
+  <div class="wrap">
+    <p class="eyebrow">The headline number</p>
+    <div class="headline">
+      <h2 class="big">You're losing an estimated <span class="hl num">$13,200</span> a month to work AI can now do.</h2>
+      <p>Plus <b class="cash num">~$43,000</b> sitting dormant in your past-client list right now. Over 12 months, the monthly leak alone is <b class="num">~$158,000/year</b> — before we touch the dormant surge.</p>
+      <p class="kicker">Not "you could grow." <b>You're already losing this.</b> Every month it stays unfixed is another $13k gone.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal">
+  <div class="wrap">
+    <p class="eyebrow">Top 3 opportunities · ranked by bleed × automatability</p>
+
+    <div class="opp">
+      <div class="opp-top"><span class="opp-rank">1</span><h3>Your dormant list is dead money — <span class="cash num">$43,000</span> recoverable in 90 days</h3></div>
+      <div class="row"><span class="lab">The bleed</span>2,400 past clients who loved you once and haven't been back. Nobody reaches out — the front desk doesn't have time.</div>
+      <div class="row"><span class="lab">The fix</span>An AI reactivation campaign — personalized texts + emails in your voice, sent in waves, booking straight into your calendar.</div>
+      <div class="row"><span class="lab">The math</span>2,400 dormant × conservative <b>4% rebook</b> = ~96 clients × ~$450 first treatment = <span class="cash num">$43,200 recovered</span>. Existing clients close at 60–70% vs ~5% cold — cheapest money in the building.</div>
+      <div class="row"><span class="lab">Live in</span><b>2 weeks.</b> This is your first move.</div>
+    </div>
+
+    <div class="opp">
+      <div class="opp-top"><span class="opp-rank">2</span><h3>You leak ~13 bookings/mo to slow &amp; missed responses — <span class="cash num">~$5,800/mo</span></h3></div>
+      <div class="row"><span class="lab">The bleed</span>120 inquiries/month, but 35% hit voicemail after hours and the rest wait 3–5 hrs. Leads not answered in 5 min are <b>21× less likely</b> to convert — they book whoever replied first.</div>
+      <div class="row"><span class="lab">The fix</span>A 24/7 AI receptionist that answers every DM, form, and call instantly — quotes, answers, and books while they're still interested.</div>
+      <div class="row"><span class="lab">The math</span>Recover 30% of the ~42 lost touchpoints/mo = ~13 bookings × ~$450 = <span class="cash num">$5,800/mo → ~$69,600/yr</span>.</div>
+      <div class="row"><span class="lab">Live in</span><b>3 weeks.</b></div>
+    </div>
+
+    <div class="opp">
+      <div class="opp-top"><span class="opp-rank">3</span><h3>Your front desk burns ~15 hrs/week on robot work — <span class="cash num">~$3,800/mo</span></h3></div>
+      <div class="row"><span class="lab">The bleed</span>Manual scheduling, reminders, and follow-ups eat ~65 hrs/month — and no-shows still slip through because reminders are inconsistent.</div>
+      <div class="row"><span class="lab">The fix</span>Automated booking, confirmations, and smart reminders + a back-office agent handling rescheduling, so your front desk actually talks to clients.</div>
+      <div class="row"><span class="lab">The math</span>65 hrs × $28 = ~$1,820/mo labor + ~$2,000/mo recovered no-shows = <span class="cash num">~$3,800/mo</span>.</div>
+      <div class="row"><span class="lab">Live in</span><b>4 weeks.</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal">
+  <div class="wrap">
+    <p class="eyebrow">Recommended first move</p>
+    <div class="firstmove">
+      <span class="k">Start here</span>
+      <h3>Opportunity #1 — the dormant reactivation campaign.</h3>
+      <p>Fastest visible win, needs nothing new from you, and it <b>pays for the entire engagement before we build anything else.</b> You'll see booked appointments inside 2 weeks — that's the proof that funds Phases 2 and 3.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal">
+  <div class="wrap">
+    <p class="eyebrow">The engagement</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Phase</th><th>Timeline</th><th>What we build</th><th>What it produces</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ph">Phase 1 — First Fix</span></td>
+            <td><span class="tm">Week 1–2</span></td>
+            <td class="small">Dormant reactivation campaign</td>
+            <td class="small">Booked appointments in 14 days — <span class="cash">guaranteed</span>, or the retainer doesn't start until it works</td>
+          </tr>
+          <tr>
+            <td><span class="ph">Phase 2 — Capture</span></td>
+            <td><span class="tm">Week 3–5</span></td>
+            <td class="small">24/7 AI receptionist (DMs, calls, forms → booked)</td>
+            <td class="small">Every lead answered instantly, ~13 bookings/mo recovered</td>
+          </tr>
+          <tr>
+            <td><span class="ph">Phase 3 — AI Department</span></td>
+            <td><span class="tm">Month 2+</span></td>
+            <td class="small">Back-office automation + live results dashboard</td>
+            <td class="small">Front desk freed, no-shows down, everything on one screen</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal">
+  <div class="wrap">
+    <p class="eyebrow">The investment · Tier 2 — AI Department</p>
+    <div class="invest">
+      <div class="box"><div class="k">Setup — one-time build</div><div class="v num">$5k–$10k</div></div>
+      <div class="box"><div class="k">Retainer — systems + dashboard</div><div class="v num">$2.5k–$5k<small>per month</small></div></div>
+    </div>
+    <div class="roi">
+      <p>You're bleeding <b class="num">~$13,200/month</b>.</p>
+      <p>The system to stop it costs a <b>fraction</b> of that in retainer — and Phase 1 alone recovers <span class="cash num">~$43,000</span> in the first 90 days.</p>
+      <p><b>You're not spending money. You're plugging a hole bigger than the bill.</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal">
+  <div class="wrap">
+    <p class="eyebrow">The guarantee</p>
+    <div class="guar">
+      <div class="item"><b>On this audit:</b> we found 10×+ the audit fee in recoverable revenue — as promised, or it was free.</div>
+      <div class="item"><b>On your first build:</b> your reactivation campaign produces booked appointments within 30 days, or the monthly retainer doesn't start until it does.</div>
+    </div>
+    <p class="guar fine">We only ever guarantee what we control — appointments booked, hours saved, leads answered, revenue reactivated. Never your close rate or the market.</p>
+  </div>
+</section>
+
+<section class="block reveal">
+  <div class="wrap">
+    <p class="eyebrow">Why us</p>
+    <p class="why">95% of companies that "add AI" get nothing back — they buy tools nobody uses. We're the 5%: we find the <b>one process bleeding the most money</b>, put AI on it, prove the number on a live dashboard, and you only scale what pays for itself.</p>
+    <p class="why cta">Next step: <b>approve Phase 1.</b> We start the reactivation build this week.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand-line">TWENTY<span class="hl">47</span> MARKETING</div>
+    <div class="tagline">YOUR BUSINESS, BOOKED 24/7.</div>
+    <div class="meta">Sample AI Opportunity Roadmap · v1 · July 2026 · <a href="./">back to model deck</a> · <a href="positioning.html">9 ways to pitch it</a></div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+</body>
+</html>
